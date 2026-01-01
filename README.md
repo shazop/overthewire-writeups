@@ -54,7 +54,9 @@ After listing the files, we can see that the file has spaces in between it.
 So just typing as it is will cause errors, to get rid of it we need to use escape sequence which is \(back-slash after every word).
 
 Command: ```cat -- --spaces\ in\ this\ filename--```
+
 Flag: ```MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx```
 
 Not sure why `--` is used before the filename
+
 <img width="553" height="168" alt="image" src="https://github.com/user-attachments/assets/04bf9b9d-e3dc-4c2f-adb8-37de14573ec9" />
