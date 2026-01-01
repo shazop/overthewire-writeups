@@ -3,9 +3,6 @@
 
 The goal of this level is for you to log into the game using SSH. The host to which you need to connect is bandit.labs.overthewire.org, on port 2220. The username is `bandit0` and the password is `bandit0`. Once logged in, go to the Level 1 page to find out how to beat Level 1.
 
-Commands you may need to solve this level
-ssh
-
 ### **Solution**:
 
 Connecting to the given ssh hostname and password:
@@ -24,9 +21,6 @@ Flag: ```ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If```
 ## Level Goal
 The password for the next level is stored in a file called readme located in the home directory. Use this password to log into bandit1 using SSH. Whenever you find a password for a level, use SSH (on port 2220) to log into that level and continue the game.
 
-Commands you may need to solve this level
-ls , cd , cat , file , du , find
-
 ### **Solution**:
 After establishing ssh connection with the ssh key(lvl 0 flag).
 
@@ -44,10 +38,6 @@ Flag: `263JGJPfgU6LtdEvgfWU1XP5yac29mFx`
 ## Level Goal
 The password for the next level is stored in a file called --spaces in this filename-- located in the home directory
 
-Commands you may need to solve this level
-ls , cd , cat , file , du , find
-
-
 ### Solution:
 Logged with the same ssh hostname with and the password(lvl 1 flag)
 After listing the files, we can see that the file has spaces in between it.
@@ -64,9 +54,6 @@ Not sure why `--` is used before the filename
 # Level 3 → Level 4
 ## Level Goal
 The password for the next level is stored in a hidden file in the inhere directory.
-
-Commands you may need to solve this level
-ls , cd , cat , file , du , find
 
 ### Solution:
 After executing ls and file command we can find a directory called `inhere`.
@@ -94,6 +81,15 @@ And inside the directory we can see lot of files with garbage data, for filterin
 ```file ./*``` - `*` asterisk prints all the files and file command returns the file type of the file.
 
 Where `-file07` is the ascii text and we can get the flag
+
+# Level 5 → Level 6
+## Level Goal
+The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties:
+
+human-readable
+1033 bytes in size
+not executable
+
 
 Flag: ```4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw```
 <img width="884" height="397" alt="image" src="https://github.com/user-attachments/assets/992c53a2-763a-433a-a3c4-02157271424a" />
