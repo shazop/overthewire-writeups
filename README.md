@@ -175,7 +175,7 @@ Here we are using `sort` and `uniq` commands for sorting in ascending order and 
 
 **Flag:** ```4CKMh1JI91bUIZZPXDqGanal4xvAg0JM```
 
-# Level Level 9 → Level 10
+# Level  9 → Level 10
 ## Level Goal
 The password for the next level is stored in the file data.txt in one of the few human-readable strings, preceded by several ‘=’ characters.
 
@@ -192,7 +192,7 @@ And here is our flag:
 
 **Flag:**  ```FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey```
 
-# Level Level 10 → Level 11
+# Level  10 → Level 11
 ## Level Goal
 The password for the next level is stored in the file data.txt, which contains base64 encoded data.
 
@@ -206,7 +206,7 @@ When we cat the file we can see the string is ended with `==`(2 equal signs), wh
 **Flag:** `dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr`
 
 
-# Level Level 11 → Level 12
+# Level  11 → Level 12
 ## Level Goal
 The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions
 
@@ -221,7 +221,7 @@ We can use cyberchef for decoding it:
 
 **Flag:** ```7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4```
 
-# Level Level 12 → Level 13
+# Level  12 → Level 13
 ## Level Goal
 The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work. Use mkdir with a hard to guess directory name. Or better, use the command “mktemp -d”. Then copy the datafile using cp, and rename it using mv (read the manpages!)
 
