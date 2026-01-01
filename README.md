@@ -93,6 +93,36 @@ human-readable
 1033 bytes in size
 not executable
 
+### Solution: 
+
+In this Level they have give some properties, in which we to filter out the file and get the flag.
+They have given the file is 
+
+readable
+
+1033 size
+
+not executable 
+
+So here is our command: 
+
+```find . -readable -size 1033c -not -executable```
+
+**Explanation**
+`find` - used for finding/filtering out specific files
+`.` - which means find the file in the current directory
+And rest is the given properties of the file
+
+Which returns the right file, and catting it out gives the flag:
+
+Flag: ```HWasnPhtq9AVKe0dmk45nxy20cvUa6EG```
+
+<img width="816" height="187" alt="image" src="https://github.com/user-attachments/assets/77ed9256-aa15-4994-8f43-0cd02cde7b0b" />
+
+
+
+
+
 
 
 
