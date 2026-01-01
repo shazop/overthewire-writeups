@@ -82,6 +82,9 @@ And inside the directory we can see lot of files with garbage data, for filterin
 
 Where `-file07` is the ascii text and we can get the flag
 
+Flag: ```4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw```
+<img width="884" height="397" alt="image" src="https://github.com/user-attachments/assets/992c53a2-763a-433a-a3c4-02157271424a" />
+
 # Level 5 → Level 6
 ## Level Goal
 The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties:
@@ -91,7 +94,5 @@ human-readable
 not executable
 
 
-Flag: ```4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw```
-<img width="884" height="397" alt="image" src="https://github.com/user-attachments/assets/992c53a2-763a-433a-a3c4-02157271424a" />
 
 
