@@ -192,6 +192,44 @@ And here is our flag:
 
 **Flag:**  ```FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey```
 
+# Level Level 10 → Level 11
+## Level Goal
+The password for the next level is stored in the file data.txt, which contains base64 encoded data.
+
+**Solution:**
+When we cat the file we can see the string is ended with `==`(2 equal signs), which is a clear indication of base64 encoding we can decode that using the command `base64 -d `
+
+**Command:** ```cat data.txt  | base64 -d```
+
+<img width="640" height="155" alt="image" src="https://github.com/user-attachments/assets/de158adc-839b-452d-bd81-c82eedf93fb2" />
+
+**Flag:** `dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr`
+
+
+# Level Level 11 → Level 12
+## Level Goal
+The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions
+
+**Solution:**
+Simple rot13 has been done so rot13 returns the flag
+
+<img width="489" height="54" alt="image" src="https://github.com/user-attachments/assets/33f8e2fe-a668-4213-9375-2e3e00ad39e7" />
+
+We can use cyberchef for decoding it:
+
+<img width="727" height="678" alt="image" src="https://github.com/user-attachments/assets/cc5bb382-bc12-4319-8e32-3799878f3457" />
+
+**Flag:** ```7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4```
+
+# Level Level 12 → Level 13
+## Level Goal
+The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work. Use mkdir with a hard to guess directory name. Or better, use the command “mktemp -d”. Then copy the datafile using cp, and rename it using mv (read the manpages!)
+
+### Solution
+
+
+
+
 
 
 
