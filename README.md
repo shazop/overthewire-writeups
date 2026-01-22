@@ -567,9 +567,12 @@ From your local machine (not the OverTheWire machine!), clone the repository and
 
 Go to the tmp directory and create a directory and clone the git with given port number 2220 and cat readme to get the flag
 
-`git clone ssh://bandit27-git@localhost:2220/home/bandit27-git/repo`
+`git clone ssh://bandit27-git@bandit.labs.overthewire.org:2220/home/bandit27-git/repo`
 
 **Flag:** `Yz9IpL0sBcCeuG7m9uQFt8ZNpS4HZRcN`
+
+<img width="795" height="109" alt="image" src="https://github.com/user-attachments/assets/6c279630-c0fb-4576-834e-3b5afdd6ff0a" />
+
 
 # Bandit Level 28 → Level 29
 ## Level Goal
@@ -626,9 +629,38 @@ Here the the secret has the flag
 
 **Flag:** `OoffzGDlzhAlerFJ2cAiz1D41JW1Mhmt`
 
+# Bandit Level 31 → Level 32
+## Level Goal
+There is a git repository at ssh://bandit31-git@bandit.labs.overthewire.org/home/bandit31-git/repo via the port 2220. The password for the user bandit31-git is the same as for the user bandit31.
+
+From your local machine (not the OverTheWire machine!), clone the repository and find the password for the next level. This needs git installed locally on your machine.
 
 
+**Solution:**
 
+This challenge requires a key
+
+**Command:**
+
+`echo "May I come in?" > key.txt`
+
+`git add key.txt`
+
+`git commit -m "add key.txt"`
+
+`git push`
+
+Flag: `rmCBvG56y58BXzv98yZGd07ATVL5dW8y`
+
+# Bandit Level 32 → Level 33
+# Level Goal
+After all this git stuff, it’s time for another escape. Good luck!
+
+**SolutIon:** 
+
+`cat /etc/bandit_pass/bandit33`
+
+Flag: `tQdtbs5D5i2vJwkO8mEyYeYL8izoeJ0`
 
 
 
