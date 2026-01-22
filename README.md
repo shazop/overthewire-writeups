@@ -475,16 +475,57 @@ Flag: ```0Zf11ioIjMVN551jX3CmStKLYqjk54Ga```
 
 <img width="802" height="90" alt="image" src="https://github.com/user-attachments/assets/e189e977-71db-4548-bf4f-7a71290131e7" />
 
+# Bandit Level 23 → Level 24
+## Level Goal
+A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
+
+NOTE: This level requires you to create your own first shell-script. This is a very big step and you should be proud of yourself when you beat this level!
+
+NOTE 2: Keep in mind that your shell script is removed once executed, so you may want to keep a copy around…
+
+**Solution:**
+
+So from this we understand that whatever file is saved in the folder “bandit24” gets executed and if the file was created by “bandit23” then after 60 seconds of execution the file is deleted. If we want the password for “bandit24” we need to write a script that will be executed from the bandit24 folder. The script that we write should get the password and save in a location that we can access (/tmp directory)
+
+Commands:
+
+```mkdir /tmp/shaz```
+
+```cd /tmp/shaz```
+
+Custom bash file for saving a copy before it gets deleted
+
+script.sh
+
+```
+#!/bin/bash
+cat /etc/bandit_pass/bandit24 > /tmp/shaz/password
+```
+
+Then create a file named touch password in the /tmp/shaz/ directory
+
+Also give the permission for our script using
+
+`chmod 777 -R /tmp/shaz`
+
+`cp script.sh /var/spool/bandit24`
 
 
+Flag: `gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8`
+
+# Bandit Level 24 → Level 25
+## Level Goal
+A daemon is listening on port 30002 and will give you the password for bandit25 if given the password for bandit24 and a secret numeric 4-digit pincode. There is no way to retrieve the pincode except by going through all of the 10000 combinations, called brute-forcing.
+You do not need to create new connections each time
+
+Solution:
+
+Here they have given a nc server for finding the four digit pin we can solve that using bruteforce method
+
+Command: `for i in {0000..9999}; do echo “gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8 $i”; done | nc localhost 30002`
 
 
-
-
-
-
-
-
+Flag: `iCi86ttT4KSNe1armKiwbQNmB3YJP3q4`
 
 
 
