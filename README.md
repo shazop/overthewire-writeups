@@ -432,6 +432,15 @@ NOTE: Try connecting to your own network daemon to see if it works as you think
 
 **Solution:**
 
+In this challenge we need to use a ncat session for that we can simply use this command
+
+```nc -lvp 2222```
+
+And connect with ./suconnect and the given port number which is 2222 and giving the current flag unlocks the new flag
+
+<img width="425" height="119" alt="image" src="https://github.com/user-attachments/assets/502ddf65-85e1-465b-b1ea-7cb75dbfa357" />
+
+Flag: `EeoULMCra2q0dSkYj561DX7s1CpBuOBt`
 
 
 
