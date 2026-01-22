@@ -442,6 +442,44 @@ And connect with ./suconnect and the given port number which is 2222 and giving 
 
 Flag: `EeoULMCra2q0dSkYj561DX7s1CpBuOBt`
 
+# Bandit Level 21 → Level 22
+## Level Goal
+A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
+
+**Solution:**
+Here they have given there is cron job running, simply cron jobs means schedule task which run in the background of the OS 
+which is located in `/etc/cron.d` directory
+
+And we can see a cronjob_bandit22 cron file catting that gives a bash file directory catting that leads to the flag directory
+
+<img width="849" height="290" alt="image" src="https://github.com/user-attachments/assets/ec259155-47fc-49bb-9002-74d8b7ab2e19" />
+
+Flag: `tRae0UfB9v0UzbCdn9cY0gQnds9GF58Q`
+
+#Bandit Level 22 → Level 23
+## Level Goal
+A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
+
+NOTE: Looking at shell scripts written by other people is a very useful skill. The script for this level is intentionally made easy to read. If you are having problems understanding what it does, try executing it to see the debug information it prints.
+
+**Solution:**
+
+Same like that go to the cron jobs do the given tasks in the cronjob23
+
+Run this command to get the md5sum and cat /tmp/<md5> which gives the flag
+
+```echo I am user bandit23 | md5sum```
+
+Flag: ```0Zf11ioIjMVN551jX3CmStKLYqjk54Ga```
+
+
+<img width="802" height="90" alt="image" src="https://github.com/user-attachments/assets/e189e977-71db-4548-bf4f-7a71290131e7" />
+
+
+
+
+
+
 
 
 
