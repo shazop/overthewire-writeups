@@ -549,13 +549,27 @@ Good job getting a shell! Now hurry and grab the password for bandit27!
 
 **Solution:**
 
-Just enter :shell in the vi and we got the shell here
+Just enter **:shell** in the vim and we got the shell here
 
-Command:
+**Command:**
 
 `./bandit27-do cat /etc/bandit_pass/bandit27`
 
 Flag: `upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB`
+
+# Bandit Level 27 → Level 28
+## Level Goal
+There is a git repository at ssh://bandit27-git@bandit.labs.overthewire.org/home/bandit27-git/repo via the port 2220. The password for the user bandit27-git is the same as for the user bandit27.
+
+From your local machine (not the OverTheWire machine!), clone the repository and find the password for the next level. This needs git installed locally on your machine.
+
+**Solution:**
+
+Go to the tmp directory and create a directory and clone the git with given port number 2220 and cat readme to get the flag
+
+`git clone ssh://bandit27-git@localhost:2220/home/bandit27-git/repo`
+
+**Flag:** `Yz9IpL0sBcCeuG7m9uQFt8ZNpS4HZRcN`
 
 
 
