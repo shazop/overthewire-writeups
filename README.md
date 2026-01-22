@@ -316,6 +316,128 @@ Flag: ```kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx```
 
 <img width="512" height="287" alt="image" src="https://github.com/user-attachments/assets/1a199c70-7182-42dd-b01f-cb14444a719d" />
 
+# Bandit Level 16 → Level 17
+## Level Goal
+The credentials for the next level can be retrieved by submitting the password of the current level to a port on localhost in the range 31000 to 32000. First find out which of these ports have a server listening on them. Then find out which of those speak SSL/TLS and which don’t. There is only 1 server that will give the next credentials, the others will simply send back to you whatever you send to it.
+
+Helpful note: Getting “DONE”, “RENEGOTIATING” or “KEYUPDATE”? Read the “CONNECTED COMMANDS” section in the manpage.
+
+**Solution**:
+
+In this challenge we can see that there is port range from 31000 to 32000 in which we need to find the one which uses ssl and nc into it.
+
+For that we can use the nmap tool.
+
+Command:
+
+```nmap localhost -p 31000-32000```
+
+Which is used for finding open ports and we got 6 open ports, so lets find the service running on the open ports using this command
+
+Command: 
+
+```nmap localhost -p 31046,31518,31691,31790,31960 -sV -T4```
+
+<img width="475" height="150" alt="image" src="https://github.com/user-attachments/assets/09e3d325-d9a6-4b04-9776-419871fd96a2" />
+
+Then simply connect with openssl
+
+Command:
+
+```openssl s_client -connect localhost:31790 -ign_eof```
+
+And a RSA key will show up
+
+<img width="794" height="501" alt="image" src="https://github.com/user-attachments/assets/d87040db-18d7-4098-a2ca-5aa602bc8d70" />
+
+Save that ssh key in a file like ssh_key.pem and thats our key for next lvl
+
+```-----BEGIN RSA PRIVATE KEY-----
+MIIEogIBAAKCAQEAvmOkuifmMg6HL2YPIOjon6iWfbp7c3jx34YkYWqUH57SUdyJ
+imZzeyGC0gtZPGujUSxiJSWI/oTqexh+cAMTSMlOJf7+BrJObArnxd9Y7YT2bRPQ
+Ja6Lzb558YW3FZl87ORiO+rW4LCDCNd2lUvLE/GL2GWyuKN0K5iCd5TbtJzEkQTu
+DSt2mcNn4rhAL+JFr56o4T6z8WWAW18BR6yGrMq7Q/kALHYW3OekePQAzL0VUYbW
+JGTi65CxbCnzc/w4+mqQyvmzpWtMAzJTzAzQxNbkR2MBGySxDLrjg0LWN6sK7wNX
+x0YVztz/zbIkPjfkU1jHS+9EbVNj+D1XFOJuaQIDAQABAoIBABagpxpM1aoLWfvD
+KHcj10nqcoBc4oE11aFYQwik7xfW+24pRNuDE6SFthOar69jp5RlLwD1NhPx3iBl
+J9nOM8OJ0VToum43UOS8YxF8WwhXriYGnc1sskbwpXOUDc9uX4+UESzH22P29ovd
+d8WErY0gPxun8pbJLmxkAtWNhpMvfe0050vk9TL5wqbu9AlbssgTcCXkMQnPw9nC
+YNN6DDP2lbcBrvgT9YCNL6C+ZKufD52yOQ9qOkwFTEQpjtF4uNtJom+asvlpmS8A
+vLY9r60wYSvmZhNqBUrj7lyCtXMIu1kkd4w7F77k+DjHoAXyxcUp1DGL51sOmama
++TOWWgECgYEA8JtPxP0GRJ+IQkX262jM3dEIkza8ky5moIwUqYdsx0NxHgRRhORT
+8c8hAuRBb2G82so8vUHk/fur85OEfc9TncnCY2crpoqsghifKLxrLgtT+qDpfZnx
+SatLdt8GfQ85yA7hnWWJ2MxF3NaeSDm75Lsm+tBbAiyc9P2jGRNtMSkCgYEAypHd
+HCctNi/FwjulhttFx/rHYKhLidZDFYeiE/v45bN4yFm8x7R/b0iE7KaszX+Exdvt
+SghaTdcG0Knyw1bpJVyusavPzpaJMjdJ6tcFhVAbAjm7enCIvGCSx+X3l5SiWg0A
+R57hJglezIiVjv3aGwHwvlZvtszK6zV6oXFAu0ECgYAbjo46T4hyP5tJi93V5HDi
+Ttiek7xRVxUl+iU7rWkGAXFpMLFteQEsRr7PJ/lemmEY5eTDAFMLy9FL2m9oQWCg
+R8VdwSk8r9FGLS+9aKcV5PI/WEKlwgXinB3OhYimtiG2Cg5JCqIZFHxD6MjEGOiu
+L8ktHMPvodBwNsSBULpG0QKBgBAplTfC1HOnWiMGOU3KPwYWt0O6CdTkmJOmL8Ni
+blh9elyZ9FsGxsgtRBXRsqXuz7wtsQAgLHxbdLq/ZJQ7YfzOKU4ZxEnabvXnvWkU
+YOdjHdSOoKvDQNWu6ucyLRAWFuISeXw9a/9p7ftpxm0TSgyvmfLF2MIAEwyzRqaM
+77pBAoGAMmjmIJdjp+Ez8duyn3ieo36yrttF5NSsJLAbxFpdlc1gvtGCWW+9Cq0b
+dxviW8+TFVEBl1O4f7HVm6EpTscdDxU+bCXWkfjuRb7Dy9GOtt9JPsX8MBTakzh3
+vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
+-----END RSA PRIVATE KEY-----
+```
+
+# Bandit Level 17 → Level 18 
+## Level Goal
+There are 2 files in the homedirectory: passwords.old and passwords.new. The password for the next level is in passwords.new and is the only line that has been changed between passwords.old and passwords.new
+
+NOTE: if you have solved this level and see ‘Byebye!’ when trying to log into bandit18, this is related to the next level, bandit19
+
+**Solution:**
+
+In this challenge one particular line is changed from password.old and saved as password.new which is the flag
+
+Command:
+
+```diff passwords.old passwords.new```
+
+<img width="625" height="118" alt="image" src="https://github.com/user-attachments/assets/87b4634e-4e6b-45c0-9a6f-9aad09080e31" />
+
+Flag: `x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO`
+
+# Bandit Level 18 → Level 19
+
+## Level Goal
+The password for the next level is stored in a file readme in the homedirectory. Unfortunately, someone has modified .bashrc to log you out when you log in with SSH.
+
+**Solution:**
+
+Here the interactive terminal is off so we need to just add cat readme for printing the flag
+
+Flag: ```cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8```
+
+<img width="825" height="263" alt="image" src="https://github.com/user-attachments/assets/5fb48e78-d4c5-4da8-a4da-12e0a7283495" />
+
+# Bandit Level 19 → Level 20
+## Level Goal
+To gain access to the next level, you should use the setuid binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place (/etc/bandit_pass), after you have used the setuid binary.
+
+**Solution:**
+
+Here we can see a elf file from which we can command execution and we can see that in the permission only the ELF file have access to the bandit20 host
+
+Command: ```./bandit20-do cat /etc/bandit_pass/bandit20```
+
+Flag: `0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO`
+
+# Bandit Level 20 → Level 21
+## Level Goal
+There is a setuid binary in the homedirectory that does the following: it makes a connection to localhost on the port you specify as a commandline argument. It then reads a line of text from the connection and compares it to the password in the previous level (bandit20). If the password is correct, it will transmit the password for the next level (bandit21).
+
+NOTE: Try connecting to your own network daemon to see if it works as you think
+
+**Solution:**
+
+
+
+
+
+
+
 
 
 
