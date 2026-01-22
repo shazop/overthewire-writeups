@@ -571,10 +571,60 @@ Go to the tmp directory and create a directory and clone the git with given port
 
 **Flag:** `Yz9IpL0sBcCeuG7m9uQFt8ZNpS4HZRcN`
 
+# Bandit Level 28 → Level 29
+## Level Goal
+There is a git repository at ssh://bandit28-git@bandit.labs.overthewire.org/home/bandit28-git/repo via the port 2220. The password for the user bandit28-git is the same as for the user bandit28.
+
+From your local machine (not the OverTheWire machine!), clone the repository and find the password for the next level. This needs git installed locally on your machine.
+
+**Solution:**
+
+Like the last one clone the repo and go to repo cat the README.md and we can see there password is xxxxxxxx
+
+Which is supposed to were the flag there previously so check commits and reaveal the flag
+
+`git log`
+
+`git checkout <commit_id>`
 
 
+**Flag:** `4pT1t5DENaYuqnqvadYs1oE4QLCdjmJ7`
 
+# Bandit Level 29 → Level 30
+## Level Goal 
+There is a git repository at ssh://bandit29-git@bandit.labs.overthewire.org/home/bandit29-git/repo via the port 2220. The password for the user bandit29-git is the same as for the user bandit29.
 
+From your local machine (not the OverTheWire machine!), clone the repository and find the password for the next level. This needs git installed locally on your machine.
+
+**Solution:**
+
+Same like previous one create tmp directory /tmp/shaz for example and clone the repo 
+
+Here also the password is redacted
+
+Commands: 
+
+`git branch -r`
+
+`git checkout dev`
+
+and catting the readme gives the flag
+
+**Flag:** `qp30ex3VLz5MDG1n91YowTv4Q8l7CDZL`
+
+# Bandit Level 30 → Level 31
+## Level Goal
+There is a git repository at ssh://bandit30-git@bandit.labs.overthewire.org/home/bandit30-git/repo via the port 2220. The password for the user bandit30-git is the same as for the user bandit30.
+
+From your local machine (not the OverTheWire machine!), clone the repository and find the password for the next level. This needs git installed locally on your machine.
+
+**Solution:**
+
+Here the the secret has the flag
+
+**Command:** `git show secret`
+
+**Flag:** `OoffzGDlzhAlerFJ2cAiz1D41JW1Mhmt`
 
 
 
